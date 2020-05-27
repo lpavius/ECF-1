@@ -26,7 +26,7 @@ public class UserCreateDto {
     @NotNull
     private LocalDate birthDate;
 
-    @Size(max = 256)
+    @Size(max = 255)
     @NotNull
     @Email
     private String email;
