@@ -1,4 +1,7 @@
 <h1>{{ title }}</h1>
+<div *ngIf="loggedIn()">Inscription réussie ! Vous pouvez utiliser maintenant vos
+  identifiants.</div>
+
 <div routerLink="login"></div>
 
 <router-outlet></router-outlet>

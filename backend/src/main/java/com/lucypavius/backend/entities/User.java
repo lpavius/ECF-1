@@ -8,8 +8,7 @@ import java.time.LocalDate;
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private String email;
 
     @Column(nullable = false)
     private String firstName;
@@ -20,9 +19,6 @@ public class User {
     @Column(nullable = false)
     private LocalDate birthDate;
 
-    @Column(nullable = false, unique = true)
-    private String email;
-
     @Column(nullable = false, length = 60)
     private String password;
 
@@ -32,14 +28,6 @@ public class User {
 
     public User() {
         //
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -93,11 +81,10 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "id=" + id +
+                ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
-                ", email='" + email + '\'' +
                 ", password='" + "[PROTECTED]" +
                 '}';
     }

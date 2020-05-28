@@ -8,7 +8,7 @@ import java.time.LocalDate;
 
 public class UserDto {
 
-    private Long id;
+    private String email;
 
     private String firstName;
 
@@ -16,20 +16,10 @@ public class UserDto {
 
     private LocalDate birthDate;
 
-    private String email;
-
     private String password;
 
     public UserDto() {
         //
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
     }
 
     public String getFirstName() {
@@ -75,11 +65,10 @@ public class UserDto {
     @Override
     public String toString() {
         return "UserDto{" +
-                "id=" + id +
+                ", email='" + email + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
-                ", email='" + email + '\'' +
                 ", password='" + "[PROTECTED]" +
                 '}';
     }

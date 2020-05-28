@@ -1,24 +1,24 @@
 <h3>Inscription</h3>
-<form action="">
+<form name="form" #registerForm="ngForm" (ngSubmit)="registerForm.form.valid && register()" novalidate>
   <div>
-    <label for="">Prénom: </label>
-    <input type="text" name="" id="">
+    <label for="email">E-mail: </label>
+    <input type="email" name="email" id="email" [(ngModel)]="model.email" #email="ngModel" required>
   </div>
   <div>
-    <label for="">Nom: </label>
-    <input type="text" name="" id="">
+    <label for="firstname">Prénom: </label>
+    <input type="text" name="firstname" id="firstname" [(ngModel)]="model.firstname" #firstname="ngModel" required>
   </div>
   <div>
-    <label for="">Date de Naissance: </label>
-    <input type="date" name="" id="">
+    <label for="lastname">Nom: </label>
+    <input type="text" name="lastname" id="lastname" [(ngModel)]="model.lastname" #lastname="ngModel" required>
   </div>
   <div>
-    <label for="">E-mail: </label>
-    <input type="email" name="" id="">
+    <label for="birthdate">Date de Naissance: </label>
+    <input type="date" name="birthdate" id="birthdate" [(ngModel)]="model.birthdate" #birthdate="ngModel" required>
   </div>
   <div>
-    <label for="">Mot de Passe: </label>
-    <input type="password" name="" id="">
+    <label for="password">Mot de Passe: </label>
+    <input type="password" name="password" id="password" [(ngModel)]="model.password" #password="ngModel" required>
   </div>
   <p><button type="submit">S'inscrire</button></p>
 </form>

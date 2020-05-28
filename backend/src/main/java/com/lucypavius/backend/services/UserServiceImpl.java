@@ -21,10 +21,10 @@ public class UserServiceImpl implements UserService{
     @Override
     public void createUser(UserCreateDto dto) {
         User user = new User();
+        user.setEmail(dto.getEmail());
         user.setFirstName(dto.getFirstName());
         user.setLastName(dto.getLastName());
         user.setBirthDate(dto.getBirthDate());
-        user.setEmail(dto.getEmail());
         user.setPassword(dto.getPassword());
         Role role = roleRepository.findByDefaultRoleTrue();
         user.setRole(role);
@@ -39,10 +39,10 @@ public class UserServiceImpl implements UserService{
 
     private UserDto convertFrom(User user) {
         UserDto dto = new UserDto();
+        dto.setEmail(user.getEmail());
         dto.setFirstName(user.getFirstName());
         dto.setLastName(user.getLastName());
         dto.setBirthDate(user.getBirthDate());
-        dto.setEmail(user.getEmail());
         dto.setPassword(user.getPassword());
         return dto;
     }

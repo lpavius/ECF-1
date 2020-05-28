@@ -16,13 +16,18 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /* Create */
     @PostMapping("/user")
     public void create(@Valid @RequestBody UserCreateDto dto) {
         userService.createUser(dto);
     }
 
+    /* Read */
     @GetMapping("/user/{id}")
     public UserDto get(@PathVariable("id") Long id) {
         return userService.getById(id);
     }
+
+    /* Update */
+    /* Delete */
 }

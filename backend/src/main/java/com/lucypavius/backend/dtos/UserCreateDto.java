@@ -14,6 +14,11 @@ import java.time.LocalDate;
 
 public class UserCreateDto {
 
+    @Size(max = 255)
+    @NotNull
+    @Email
+    private String email;
+
     @Size(max = 256)
     @NotNull
     private String firstName;
@@ -26,12 +31,7 @@ public class UserCreateDto {
     @NotNull
     private LocalDate birthDate;
 
-    @Size(max = 255)
-    @NotNull
-    @Email
-    private String email;
-
-    @Size(max = 256)
+    @Size(min = 6 ,max = 60)
     @NotEmpty
     private String password;
 
@@ -82,10 +82,10 @@ public class UserCreateDto {
     @Override
     public String toString() {
         return "UserCreateDto{" +
-                "firstName='" + firstName + '\'' +
+                "email='" + email + '\'' +
+                ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", birthDate=" + birthDate +
-                ", email='" + email + '\'' +
                 ", password='" + "[PROTECTED]" +
                 '}';
     }
